@@ -58,4 +58,5 @@ class Rectangle:
             return rec_str[:-1]
 
     def __repr__(self):
-        return f"<{self.__module__}.{self.__class__.__name__} object at {hex(id(self))}>"
+        return f"<{self.__module__}.{self.__class__.__name__} \
+object at {hex(id(self))}>"

@@ -25,11 +25,12 @@ Case with One int and One float
 	>>> add_integer(4, 2.0)
 	6
 
-Case with both arguments as floats
+Case with float overflow
 
 ::
-	>>> add_integer(2.0, 3.0)
-	5
+	>>> add_integer(2e10000, 3.0)
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
 
 Case for values that are not ints or floats
 
@@ -55,3 +56,9 @@ Case with no arguments
 	>>> add_integer()
 	Traceback (most recent call last):
 	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Case with regular +
+
+::
+	>>> add_integer(1 + 4)
+	103

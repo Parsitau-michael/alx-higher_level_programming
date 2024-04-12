@@ -14,30 +14,24 @@ i.e equivalent to using ''+'' operator.
 	>>> add_integer(2, 3)
 	5
 
-Case with a negative integer
-
-::
-	>>> add_integer(-1, 9)
-	8
-
-A case with bot a and b as -ve integers
+Case with negative integers
 ::
 	>>> add_integer(-5, -5)
 	-10
 
-One int and One float
+Case with One int and One float
 
 ::
 	>>> add_integer(4, 2.0)
 	6
 
-Try using floats
+Case with both arguments as floats
 
 ::
 	>>> add_integer(2.0, 3.0)
 	5
 
-The case for values that are not ints or floats
+Case for values that are not ints or floats
 
 ::
 	>>> add_integer("Hello", 8)
@@ -49,3 +43,15 @@ The case for values that are not ints or floats
 	Traceback (most recent call last):
 	TypeError: b must be an integer
 
+Case with missing one argument
+
+::
+	>>> add_integer(5)
+	103
+
+Case with no arguments
+
+::
+	>>> add_integer()
+	Traceback (most recent call last):
+	TypeError: add_integer() missing 1 required positional argument: 'a'

@@ -1,0 +1,74 @@
+========================================
+The modulein use is ''7-base_geometry''
+========================================
+The class is ''BaseGeometry''
+
+TEST CASES
+==========
+Testing the imports
+
+::
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+	>>> bg = BaseGeometry()
+	
+Testing different cases for value
+
+::
+	>>> isinstance(bg, BaseGeometry)
+	True
+
+::
+	>>> hasattr(bg, 'area')
+	True
+
+::
+	>>> hasattr(bg, 'integer_validator')
+	True
+
+::
+	>>> bg.integer_validator("str")
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+::
+        >>> bg.integer_validator("str", 1)
+
+::
+        >>> bg.integer_validator("str", 0)
+	Traceback (most recent call last):
+        ValueError: str must be greater than 0
+
+::
+        >>> bg.integer_validator("str", -6)
+	Traceback (most recent call last):
+	ValueError: str must be greater than 0
+
+::
+        >>> bg.integer_validator("str", "5")
+	Traceback (most recent call last):
+	TypeError: str must be an integer
+
+::
+        >>> bg.integer_validator("str", (5,))
+	Traceback (most recent call last):
+	TypeError: str must be an integer
+
+::
+        >>> bg.integer_validator("str", [5])
+	Traceback (most recent call last):
+	TypeError: str must be an integer
+
+::
+        >>> bg.integer_validator("str", True)
+	Traceback (most recent call last):
+	TypeError: str must be an integer
+
+::
+        >>> bg.integer_validator("str", {0, 1})
+	Traceback (most recent call last):
+	TypeError: str must be an integer
+
+::
+        >>> bg.integer_validator("str", None)
+	Traceback (most recent call last):
+	TypeError: str must be an integer

@@ -17,8 +17,9 @@ The Class ''MyList'' inherits from list
 	True
 
 ::
+	>>> my_list.append(4)
 	>>> print(my_list)
-	[3, 2, 1]
+	[3, 2, 1, 4]
 
 ::
 	>>> print_sorted([1, 3, 2])
@@ -29,7 +30,8 @@ The Class ''MyList'' inherits from list
 	[1]
 
 ::
-	>>> print_sorted([])
+	>>> my_list = MyList([])
+	>>> my_list.print_sorted()
 	[]
 
 ::

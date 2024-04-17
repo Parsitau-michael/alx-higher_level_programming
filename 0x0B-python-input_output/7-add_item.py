@@ -11,7 +11,7 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 # Get the commandline argument(s)
 argument = argv[1:]
 
-# Load existing list from the file 
+# Load existing list from the file
 if exists("add_item.json"):
     existing = load_from_json_file("add_item.json")
 else:

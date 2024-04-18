@@ -14,6 +14,6 @@ class Student:
     def to_json(self, attrs=None):
         """public method that retrieves a dictionary
         representation of a Student instance"""
-        if attrs is not None:
-            return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
-        return self.__dict__
+        if attrs is None:
+            return self.__dict__
+        return {att: getattr(self, att) for att in attrs if hasattr(self, att)}

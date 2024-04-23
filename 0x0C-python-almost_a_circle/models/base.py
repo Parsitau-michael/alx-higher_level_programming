@@ -9,7 +9,6 @@ class Base:
     """This is the Base Class """
     __nb_objects = 0
 
-
     def __init__(self, id=None):
         """this method initializes an instance of Base"""
         if id is not None:
@@ -19,8 +18,7 @@ class Base:
             self.id = Base.__nb_objects
 
     def to_json_string(list_dictionaries):
-        """This method returns the json string representation 
-        of list_dictionaries"""
+        """This method returns the json string representation of the obj"""
         return json.dumps(list_dictionaries)
 
     def save_to_file(cls, list_objs):
@@ -36,7 +34,7 @@ class Base:
     def from_json_string(json_string):
         """This method returns the list of the JSON string
         representation json_string"""
-        if json_string is None :
+        if json_string is None:
             return []
         else:
             return json.loads(json_string)

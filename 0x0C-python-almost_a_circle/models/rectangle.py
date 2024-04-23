@@ -79,7 +79,11 @@ class Rectangle(Base):
 
     def __str__(self):
         """This method overrides the __str__ method to print what we want"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+                                                        self.id, self.__x,
+                                                        self.__y,
+                                                        self.__width,
+                                                        self.__height)
 
     def update(self, *args, **kwargs):
         """A method that assigns am argument to each attribute"""

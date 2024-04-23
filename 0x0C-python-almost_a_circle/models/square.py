@@ -12,7 +12,10 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+        """this method overrides the __str__ method to return in
+        a  format we wish"""
+        return ("[Square] ({}) {}/{} - {}"
+                .format(self.id, self.x, self.y, self.width))
 
     @property
     def size(self):
@@ -26,6 +29,7 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
+        """This method assigns an argument to each attribute"""
         if args:
             self.id = args[0]
             if len(args) > 1:

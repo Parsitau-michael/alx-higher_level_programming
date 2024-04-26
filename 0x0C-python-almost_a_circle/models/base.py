@@ -3,6 +3,7 @@
 
 
 import json
+from os import path
 
 
 class Base:
@@ -32,7 +33,7 @@ class Base:
         if list_objs is None:
             list_objs = []
 
-        filename = "{}.json".format(cls.__name__)
+        filename = cls.__name__ + ".json"
         with open(filename, 'w', encoding="utf-8") as f:
             json_str = cls.to_json_string([obj.__dict__ for obj in list_objs])
             f.write(json_str)
@@ -45,5 +46,21 @@ class Base:
         else:
             return json.loads(json_string)
 
+    @classmethod
     def create(cls, **dictionary):
         """this method returns an instance with all attributes already set"""
+        instance = cls(1, 1)
+        instance.update(**dictionary)
+        return instance
+
+    @classmethod
+    def load_from_file(cls):
+        """this method returns a list of instances"""
+        file = cls.__name__ + ".json"
+        if not path.exists(file):
+            return []
+
+        with open(file, 'r') as f:
+            json_data = f.read()
+            data = cls.from_json_string(json_data)
+            return [cls.create(**obj) for obj in data]

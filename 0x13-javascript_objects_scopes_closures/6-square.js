@@ -44,7 +44,7 @@ class Square extends Rectangle {
 
   // Instance method that prints the rectangle using the character c.
   charPrint (c) {
-    if (c === undefined) {
+    if (!c) {
       c = 'X';
     }
     for (let i = 0; i < this.height; i++) {

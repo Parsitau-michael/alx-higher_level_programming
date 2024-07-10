@@ -17,7 +17,7 @@ if __name__ == "__main__":
     """ Executing the Query """
     search = argv[4]
     query = """
-        SELECT *
+        SELECT id, name
         FROM states
         WHERE states.name = '{}'
         ORDER BY states.id
@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     """ Printing each row """
     for row in rows:
-        print("({}, '{}')".format(row[0], row[1]))
+        print(row)
 
         """ Close the Cursor and the DB """
         cur.close()

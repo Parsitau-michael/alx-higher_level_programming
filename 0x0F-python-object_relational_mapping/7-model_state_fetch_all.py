@@ -23,10 +23,7 @@ if __name__ == "__main__":
     """ Querying all state Objects, ordered by id """
     states = session.query(State).order_by(State.id).all()
 
-    if states:
-        for state in states:
-            print("{}: {}".format(state.id, state.name))
-    else:
-        print("")
+    for state in states:
+        print("{}: {}".format(state.id, state.name))
 
     session.close()

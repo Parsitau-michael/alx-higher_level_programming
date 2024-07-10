@@ -8,7 +8,7 @@ This module demonstrates using Python with MySQL
 """
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     """ Establishing connection to the database """
     db = MySQLdb.connect(host="localhost", user=argv[1], passwd=argv[2],
                      db=argv[3], port=3306)

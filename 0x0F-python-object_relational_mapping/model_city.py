@@ -9,6 +9,8 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 
 
 class City(Base):
+    """ This module represents the City Class
+    """
     __tablename__ = 'cities'
 
     id = Column("id", Integer, autoincrement=True, nullable=False,

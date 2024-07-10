@@ -12,6 +12,8 @@ Base = declarative_base()
 
 
 class State(Base):
+    """ This module represents the State Class
+    """
     __tablename__ = "states"
 
     id = Column("id", Integer, primary_key=True, autoincrement=True,

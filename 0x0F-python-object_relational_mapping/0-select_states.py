@@ -3,8 +3,7 @@
 from sys import argv
 import MySQLdb
 
-"""
-This module demonstrates using Python with MySQL
+"""This module demonstrates using Python with MySQL
 """
 
 

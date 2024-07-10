@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 
-from sys import argv
-import MySQLdb
-
 """This module demonstrates using Python with MySQL
 """
+
+
+from sys import argv
+import MySQLdb
 
 
 if __name__ == "__main__":
